@@ -1,0 +1,9 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.col-12 {
+  padding: 10px;
+}
+
+.col-2 {
+  padding: 10px;
+}
