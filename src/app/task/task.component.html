@@ -5,13 +5,26 @@
         <div class="card rounded-3">
           <div class="card-body p-4">
 
-            <h4 class="text-center my-3 pb-3">To Do App</h4>
+            <h4 class="text-center my-3 pb-3">To Do List</h4>
+                  <label>Enter Task: </label>
+                  <input [(ngModel)]="newTask" type="text" >
+                  <div style="display:inline-block; padding: 5px;">
+                    <button (click)="addTask()" class="btn btn-primary">ADD TASK</button>
+                  </div>
 
-           
+                  <div *ngFor="let task of tasks; let index = index;">
+       
+                    <label>{{task}}</label>
+                        <div style="display:inline-block; padding: 5px;margin: 2px 2px;">
+                            <input (click)="deleteTask(index)" type="button" value="X" class="col-12 btn btn-danger"></div>
+                  </div>
 
+                  
+              </div>      
+          
           </div>
         </div>
       </div>
     </div>
-  </div>
+ 
 </section>
