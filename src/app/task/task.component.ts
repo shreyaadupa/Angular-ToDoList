@@ -15,7 +15,6 @@ export class TaskComponent implements OnInit {
  public doneTasks = [];
  public tasks = [];
  public newTask;
- public markdoneTask;
  public Priority;
  public Status;
  public index;
@@ -31,7 +30,7 @@ export class TaskComponent implements OnInit {
  
    addHighTask()//insert at top of list
    {
-     if(this.newTask != '')
+     if(this.Priority === 'High')
      {
        this.tasks.unshift(this.newTask);
        this.newTask = '';
@@ -46,7 +45,7 @@ export class TaskComponent implements OnInit {
  
    addLowTask()//insert at bottom of list
    {
-     if(this.newTask != '')
+     if(this.Priority === 'Low')
      {
        this.tasks.push(this.newTask);
        this.newTask = '';
@@ -66,8 +65,8 @@ export class TaskComponent implements OnInit {
  
    doneTask(index)//if task marked as done add to done table below
    {
+     this.doneTasks.push(this.newTask);
      this.tasks.splice(index, 1);
-     this.doneTasks.push(this.markdoneTask);
    }
  
     deleteTask(index: number) //delete one specific task
