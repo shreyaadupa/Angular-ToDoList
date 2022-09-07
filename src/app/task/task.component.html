@@ -4,27 +4,133 @@
       <div class="col col-lg-9 col-xl-7">
         <div class="card rounded-3">
           <div class="card-body p-4">
-
+  
             <h4 class="text-center my-3 pb-3">To Do List</h4>
-                  <label>Enter Task: </label>
+                  <label>Task: </label>
                   <input [(ngModel)]="newTask" type="text" >
+                   
+                 
+                  <div style="display:inline-block; padding: 5px;">
+                    <label for="priority">Priority:</label>
+                    <select [(ngModel)]="Priority" name="priority" id="priority" >
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>         
+                    </select>
+                                      
+                  </div>
+  
+  
+                  <div style="display:inline-block; padding: 5px;">
+                    <label for="status">Status:</label>
+                    <select [(ngModel)]="Status" name="status" id="status">
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>          
+                    </select>
+                                      
+                  </div>
+                 
                   <div style="display:inline-block; padding: 5px;">
                     <button (click)="addTask()" class="btn btn-primary">ADD TASK</button>
                   </div>
-
-                  <div *ngFor="let task of tasks; let index = index;">
-       
-                    <label>{{task}}</label>
+  
+                  <!-- <table>      
+                    <div *ngFor="let task of tasks; let index = index;">
+                     <label>{{task}}</label>
                         <div style="display:inline-block; padding: 5px;margin: 2px 2px;">
                             <input (click)="deleteTask(index)" type="button" value="X" class="col-12 btn btn-danger"></div>
-                  </div>
-
+                        </div>    
+                  </table> -->
+  
+  
+                  <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tasks</th>
+                      <th scope="col">Priority</th>
+                      <th scope="col">Done</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+  
+  
+                 
+                  <tbody>
+  
+                  <tr *ngFor="let task of tasks; let index = index;">
+  
+                    <td>
+                      <label>{{task}}</label>
+                    </td>
+                            
+                         
+                     <td>  
+  
+                      <div style="display:inline-block; padding: 1px;margin: 1px 4px;">
+                      <input type="button" value="High" class="col-xs- btn btn-danger"></div> 
+                   
+                    </td>
+                     
                   
-              </div>      
-          
+                      <td>
+  
+                        <div style="display:inline-block; padding: 1px;margin: 1px 4px;">
+                        <input (click)="doneTask(index)" type="button" value=":)" class="col-xs- btn btn-success"></div> 
+                     
+                     </td>
+                     
+                      <td>
+                       
+                          <div style="display:inline-block; padding: 1px;margin: 1px 4px;">
+                          <input (click)="deleteTask(index)" type="button" value="X" class="col-xs- btn btn-dark"></div> 
+  
+                      </td>
+  
+                    </tr>
+                    
+                  </tbody>
+               
+                </table>
+  
+  
+  
+  
+              </div>     
           </div>
+  
+  
+          <table class="table">
+          <thead>
+                <tr>
+                <th scope="col">Completed Tasks!
+  
+                <div style="display:inline-block; padding: 1px;margin: 1px 4px; text-align:left;">
+                <input (click)="clearTasks()" type="button" value="Clear" class="col-xs- btn btn-outline-danger"></div>
+               
+                </th>
+               
+                </tr>
+          </thead>
+  
+                  <tbody>
+  
+                    <!--
+ <tr *ngFor="let markdoneTask of doneTasks; let index = index;">
+  
+                    <td>
+                      <label>{{markdoneTask}}</label>
+                    </td>
+  
+                  </tr>
+                    -->
+  
+                 
+                </tbody>
+       
+        </table>
+  
+  
         </div>
       </div>
     </div>
- 
-</section>
+ </section>
