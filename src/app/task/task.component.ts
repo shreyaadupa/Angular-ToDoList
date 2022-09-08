@@ -34,7 +34,6 @@ export class TaskComponent implements OnInit {
 
         this.newTask = '';
         this.Priority = null;
-   
 
       }
       /*
@@ -63,6 +62,7 @@ export class TaskComponent implements OnInit {
       }
      }
    }
+
 
    /*
    visibility()
@@ -104,6 +104,11 @@ export class TaskComponent implements OnInit {
    clearTasks() //clear all tasks from table
    {
      this.doneTasks.length = 0;
+   }
+
+   clearCurrentTasks() //clear all tasks from table
+   {
+     this.tasks.length = 0;
    }
  
 }
