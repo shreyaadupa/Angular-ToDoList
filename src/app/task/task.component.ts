@@ -15,6 +15,7 @@ export class TaskComponent implements OnInit {
  public doneTasks = [];
  public tasks = [];
  public newTask;
+ public completed;
  public Priority;
  public Status;
  public index;
@@ -65,7 +66,8 @@ export class TaskComponent implements OnInit {
  
    doneTask(index)//if task marked as done add to done table below
    {
-     this.doneTasks.push(this.newTask);
+     this.completed = this.tasks[index]; 
+     this.doneTasks.push(this.completed);
      this.tasks.splice(index, 1);
    }
  
