@@ -19,40 +19,64 @@ export class TaskComponent implements OnInit {
  public Priority;
  public Status;
  public index;
+ public totalList = [];
  
   addTask() //will not be needed soon
   {
+    
      if(this.newTask != '')
      {
-       this.tasks.push(this.newTask);
-       this.newTask = '';
+      if(this.Priority == 'High')
+      {
+        
+        this.totalList.push(this.newTask);
+        this.tasks.unshift(this.newTask);
+
+        this.newTask = '';
+        this.Priority = null;
+   
+
+      }
+      /*
+      else if(this.Priority == 'Medium')
+      {
+        this.totalList.push(this.newTask);
+        this.totalList.forEach(el => {
+          if (el[this.index] === true) {  // or just if (el[1]) if you are sure it is always a boolean
+            el.push(...this.newTask) // or add[0]
+          }
+        })
+
+        for(let i = 0; i<this.totalList.length; i++)
+        {
+         // if(this.totalList[i].)
+        }
+        
+
+      }*/
+      else if(this.Priority == 'Low')
+      {
+        this.totalList.push(this.newTask);
+        this.tasks.push(this.newTask);
+        this.newTask = '';
+        this.Priority = null;
+      }
      }
    }
- 
-   addHighTask()//insert at top of list
+
+   /*
+   visibility()
    {
-     if(this.Priority === 'High')
-     {
-       this.tasks.unshift(this.newTask);
-       this.newTask = '';
-       this.Priority = '';
-     }
-   }
+
+      if(this.Priority == 'High')
+      {
+        let h = document.getElementById("hhh");
+        h.style.display = "none";
+
+      }
+
+   }*/
  
-   addMediumTask() //insert after the last high task OR at top if no high task
-   {
- 
-   }
- 
-   addLowTask()//insert at bottom of list
-   {
-     if(this.Priority === 'Low')
-     {
-       this.tasks.push(this.newTask);
-       this.newTask = '';
-       this.Priority = '';
-     }
-   }
  
    addCompletedTask(index) //make sure to strike through the task as well in html
    {
