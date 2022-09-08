@@ -31,7 +31,7 @@
                   </div>
                  
                   <div style="display:inline-block; padding: 5px;">
-                    <button (click)="addTask()" class="btn btn-primary">ADD TASK</button>
+                    <button (click)="addTask()"  class="btn btn-primary">ADD TASK</button>
                   </div>
 
                   
@@ -61,23 +61,24 @@
                          
                      <td>  
   
-                          <div id="high" style="display:inline-block; padding: 1px;margin: 1px 4px;">
+                          <div id="high" style="display:inline-block; padding: 1px;margin: 1px 4px; display: none;">
 
-                          <input id="hhh" type="button" value="High" class="col-xs- btn btn-danger">
+                          <input id="hhh" type="button" value="High" class="col-xs- btn btn-danger">{{highVisibility()
+                          }}
                           
                         </div> 
 
 
-                        <div id="med" style="display:inline-block; padding: 1px;margin: 1px 4px;">
+                        <div id="med" style="display:inline-block; padding: 1px;margin: 1px 4px; display: none;">
 
-                          <input id="mmm" type="button" value="Medium" class="col-xs- btn btn-warning"> 
+                          <input id="mmm" type="button" value="Medium" class="col-xs- btn btn-warning">{{medVisibility()}} 
                           
                         </div> 
 
 
-                        <div id="low" style="display:inline-block; padding: 1px;margin: 1px 4px;">
+                        <div id="low" style="display:inline-block; padding: 1px;margin: 1px 4px; display: none;">
 
-                          <input id="lll" type="button" value="Low" class="col-xs- btn btn-success">
+                          <input id="lll" type="button" value="Low" class="col-xs- btn btn-success">{{lowVisibility()}}
                           
                         </div> 
           

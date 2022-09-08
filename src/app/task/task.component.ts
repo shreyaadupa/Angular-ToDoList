@@ -35,6 +35,9 @@ export class TaskComponent implements OnInit {
         this.newTask = '';
         this.Priority = null;
 
+        highVisibility();
+
+
       }
       /*
       else if(this.Priority == 'Medium')
@@ -63,6 +66,22 @@ export class TaskComponent implements OnInit {
      }
    }
 
+  
+    highVisibility()
+    {
+     document.getElementById("high").style.display = "block";
+    }
+    medVisibility()
+    {
+     document.getElementById("med").style.display = "block";
+    }
+    lowVisibility()
+    {
+     document.getElementById("low").style.display = "block";
+    }
+   
+
+  
 
    /*
    visibility()
@@ -111,4 +130,8 @@ export class TaskComponent implements OnInit {
      this.tasks.length = 0;
    }
  
+}
+
+function highVisibility() {
+throw new Error('Function not implemented.');
 }
