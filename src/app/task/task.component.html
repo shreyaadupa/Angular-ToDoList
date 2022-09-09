@@ -11,44 +11,20 @@
                    
                  
                   <div style="display:inline-block; padding: 5px;">
-                    <label for="priority">Priority:</label>
-                    <select [(ngModel)]="Priority" name="priority" id="priority" >
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>         
-                    </select>
-                                      
-                  </div>
-  
-  
-                  <div style="display:inline-block; padding: 5px;">
-                    <label for="status">Status:</label>
-                    <select [(ngModel)]="Status" name="status" id="status">
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>          
-                    </select>
-                                      
-                  </div>
-                 
-                  <div style="display:inline-block; padding: 5px;">
                     <button (click)="addTask()"  class="btn btn-primary">ADD TASK</button>
                   </div>
 
                   
-  
                   <table class="table">
                   <thead>
                     <tr>
                       <th scope="col">Tasks</th>
-                      <th scope="col">Priority</th>
                       <th scope="col">Done</th>
                       <th scope="col">Delete</th>
                       <div style="display:inline-block; padding: 1px;margin: 1px 4px; text-align:left;">
                         <input (click)="clearCurrentTasks()" type="button" value="Clear" class="col-xs- btn btn-outline-danger"></div>
                     </tr>
                   </thead>
-  
-  
                  
                   <tbody>
   
@@ -56,34 +32,6 @@
   
                     <td>
                       <label>{{task}}</label>
-                    </td>
-                            
-                         
-                     <td>  
-  
-                          <div id="high" style="display:inline-block; padding: 1px;margin: 1px 4px; display: none;">
-
-                          <input id="hhh" type="button" value="High" class="col-xs- btn btn-danger">{{highVisibility()
-                          }}
-                          
-                        </div> 
-
-
-                        <div id="med" style="display:inline-block; padding: 1px;margin: 1px 4px; display: none;">
-
-                          <input id="mmm" type="button" value="Medium" class="col-xs- btn btn-warning">{{medVisibility()}} 
-                          
-                        </div> 
-
-
-                        <div id="low" style="display:inline-block; padding: 1px;margin: 1px 4px; display: none;">
-
-                          <input id="lll" type="button" value="Low" class="col-xs- btn btn-success">{{lowVisibility()}}
-                          
-                        </div> 
-          
-                      
-                   
                     </td>
                      
                   
@@ -99,8 +47,6 @@
                           <div style="display:inline-block; padding: 1px;margin: 1px 4px;">
                           <input (click)="deleteTask(index)" type="button" value="X" class="col-xs- btn btn-dark"></div> 
 
-                          
-  
                       </td>
   
                     </tr>
@@ -108,9 +54,7 @@
                   </tbody>
                
                 </table>
-  
-  
-  
+
   
               </div>     
           </div>
@@ -135,18 +79,15 @@
  <tr *ngFor="let task of doneTasks; let index = index;">
   
                     <td>
-                      <label>{{task}}add</label>
+                      <label>{{task}}</label>
                     </td>
   
                   </tr>
-                    
-  
-                 
+        
                 </tbody>
        
         </table>
-  
-  
+
         </div>
       </div>
     </div>
