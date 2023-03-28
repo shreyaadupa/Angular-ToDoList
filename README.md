@@ -1,7 +1,5 @@
 # To Do list
 
-Personal Project: 
-
 Hi! 👋 This is a personal project that I worked on to practice Angular. 
 
 It is a to do list application with the Angular framework and Bootstrap. 📋
